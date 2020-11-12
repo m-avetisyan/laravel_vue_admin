@@ -28,7 +28,7 @@
                         <td>{{ post.name }}</td>
                         <td>{{ post.description}}</td>
                         <td>
-                            <img :src="require(`../../../../public/uploads/posts/${post.image}`)" style="width:100px"/>
+                            <img :src="`/uploads/posts/${post.image}`" style="width:100px"/>
                         </td>
                         <td>
                             <router-link :to="`/post/${post.id}`">Show</router-link>
