@@ -22,10 +22,6 @@
                 <tr>
                     <th>Parent Category</th>
                     <td>
-<!--                        <select class="form-control" v-model="category.id" @change="changeCategory">-->
-<!--                            <option v-for="(category, index) in options" :value="category.id">{{ category.name }}</option>-->
-<!--                        </select>-->
-<!--                        <pre>{{categories}}</pre>-->
                         <treeselect
                             :options="categories"
                             :value="value"
@@ -71,38 +67,38 @@ import '@riophae/vue-treeselect/dist/vue-treeselect.css'
                 categories:[],
                 value:null,
                 // options:[],
-                another_options: [
-                    {
-                        key: 'a',
-                        name: 'a',
-                        subOptions: [ {
-                            key: 'aa',
-                            name: 'aa',
-                        },{
-                            key: 'bb',
-                            name: 'bb',
-                        },{
-                            key: 'cc',
-                            name: 'cc',
-                        } ],
-                    },
-                    {
-                        key: 'a',
-                        name: 'a',
-                        subOptions: [ {
-                            key: 'aa',
-                            name: 'aa',
-                        } ],
-                    },
-                    {
-                        key: 'a',
-                        name: 'a',
-                        subOptions: [ {
-                            key: 'aa',
-                            name: 'aa',
-                        } ],
-                    }
-                ],
+                // another_options: [
+                //     {
+                //         key: 'a',
+                //         name: 'a',
+                //         subOptions: [ {
+                //             key: 'aa',
+                //             name: 'aa',
+                //         },{
+                //             key: 'bb',
+                //             name: 'bb',
+                //         },{
+                //             key: 'cc',
+                //             name: 'cc',
+                //         } ],
+                //     },
+                //     {
+                //         key: 'a',
+                //         name: 'a',
+                //         subOptions: [ {
+                //             key: 'aa',
+                //             name: 'aa',
+                //         } ],
+                //     },
+                //     {
+                //         key: 'a',
+                //         name: 'a',
+                //         subOptions: [ {
+                //             key: 'aa',
+                //             name: 'aa',
+                //         } ],
+                //     }
+                // ],
                 normalizer(node) {
                     return {
                         id: node.id,
@@ -147,16 +143,6 @@ import '@riophae/vue-treeselect/dist/vue-treeselect.css'
                     }
                 }).then((response) => {
                     this.categories = response.data.data;
-                    // for (const responseElement of this.categories) {
-                    //     this.options.push({
-                    //         key: responseElement.id,
-                    //         name: responseElement.name,
-                    //         subOptions: responseElement.sub_options
-                    //     });
-                    // }
-                    // console.log(this.options,'ALL OPTIONS');
-                    // console.log(this.another_options,'ALL ANOTHER OPTIONS');
-                    // console.log(this.categories,'ALL Categories');
                 })
             }
         }

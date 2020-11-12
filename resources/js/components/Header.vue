@@ -23,7 +23,7 @@
                             <router-link to="/category" class="nav-link"> All Categories</router-link>
                         </li>
                         <li>
-                            <router-link to="/plan" class="nav-link"> Plans</router-link>
+                            <router-link to="/post" class="nav-link">Posts</router-link>
                         </li>
                         <li>
                             <router-link to="/cartItems" class="nav-link"> Cart Items</router-link>

@@ -26,25 +26,30 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('/generate', 'AuthController@generate');
 });
 Route::group(['middleware' => ['auth.jwt']], function () {
+
+    /* Categories Routes*/
     Route::get('/category', 'CategoryController@index');
     Route::get('/category/{id}', 'CategoryController@show');
     Route::post('/category/new/', 'CategoryController@store');
     Route::put('/category/{id}', 'CategoryController@update');
     Route::delete('/category/{id}', 'CategoryController@destroy');
     Route::get('/categories', 'CategoryController@all');
+    /* END*/
 
 
+    /* Posts Routes*/
+    Route::get('/post', 'PostController@index');
+    Route::get('/post/{id}', 'PostController@show');
+    Route::post('/post/new/', 'PostController@store');
+    Route::put('/post/{id}', 'PostController@update');
+    Route::delete('/post/{id}', 'PostController@destroy');
+    /*END */
 
-
-    Route::get('/plan', 'PlanController@index');
-    Route::get('/plan/{id}', 'PlanController@show');
-    Route::post('/plan/new/', 'PlanController@store');
-    Route::put('/plan/{id}', 'PlanController@update');
-    Route::delete('/plan/{id}', 'PlanController@destroy');
-
+    /*Cart Items Routes*/
     Route::post('/cartItem/new/{id}', 'CartItemController@store');
     Route::get('/cartItems/', 'CartItemController@index');
     Route::delete('/cartItem/{id}', 'CartItemController@destroy');
+    /* END*/
 
     Route::post('/order/new', 'BillingController@addOrder');
     Route::get('/orders/', 'BillingController@getOrders');

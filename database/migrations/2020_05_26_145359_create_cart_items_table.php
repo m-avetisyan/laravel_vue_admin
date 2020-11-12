@@ -15,12 +15,10 @@ class CreateCartItemsTable extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('planID')->unsigned();
             $table->integer('userID')->unsigned();
             $table->string('period')->nullable();
         });
         Schema::table('cart_items', function($table) {
-            $table->foreign('planID')->references('id')->on('plans')->onDelete('cascade');
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
         });
     }

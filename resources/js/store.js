@@ -9,11 +9,10 @@ export default {
         registeredUser: null,
         reg_error:null,
         categories:[],
-        plans:[],
+        posts:[],
         users:[],
         cartItems:[],
         isLogged:false,
-        price:null,
         orders:[],
         subscriptions:[],
         active_account_id:null,
@@ -41,8 +40,8 @@ export default {
         categories(state){
             return state.categories
         },
-        plans(state){
-            return state.plans
+        posts(state){
+            return state.posts
         },
         cartItems(state){
             return state.cartItems
@@ -98,8 +97,8 @@ export default {
         updateCategories(state,payload){
             state.categories = payload
         },
-        updatePlans(state,payload){
-            state.plans = payload
+        updatePosts(state,payload){
+            state.posts = payload
         },
         updateCartItems(state,payload){
             state.cartItems = payload
@@ -150,14 +149,14 @@ export default {
                     context.commit('updateUsers', response.data.data);
                 })
         },
-        getPlans(context){
-            axios.get('/api/plan',{
+        getPosts(context){
+            axios.get('/api/post',{
                 headers:{
                     'Authorization':`Bearer ${context.state.currentUser.token}`
                 }
             })
                 .then((response) => {
-                    context.commit('updatePlans', response.data.data);
+                    context.commit('updatePosts', response.data.data);
                 })
         },
         getCartItems(context){

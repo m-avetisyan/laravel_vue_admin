@@ -10,6 +10,8 @@ import VModal from 'vue-js-modal';
 import VueSlideToggle from 'vue-slide-toggle';
 import  {BootstrapVue, BootstrapVueIcons}  from 'bootstrap-vue';
 import Treeselect from "@riophae/vue-treeselect";
+import CKEditor from '@ckeditor/ckeditor5-vue';
+
 
 
 Vue.component('treeselect', Treeselect);
@@ -20,6 +22,7 @@ Vue.use(ToggleButton)
 Vue.use(VueSlideToggle)
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use( CKEditor );
 
 const store = new Vuex.Store(storeData)
 

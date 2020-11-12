@@ -11,18 +11,9 @@ class Category extends Model
         'name', 'parent_id'
     ];
 
-//    public function categories()
-//    {
-//        return $this->hasMany(Category::class,'parent_id');
-//    }
-
     public function subOptions()
     {
         return $this->hasMany(Category::class,'parent_id')->with('subOptions');
     }
-//    public function childrenRecursive()
-//    {
-//        return $this->children()->with('childrenRecursive');
-//    }
 
 }

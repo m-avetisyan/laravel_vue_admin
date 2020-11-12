@@ -9,11 +9,11 @@ import CategoryNew from './components/Categories/New.vue';
 import Category from './components/Categories/Show.vue';
 import CategoryEdit from './components/Categories/Edit.vue';
 
-import PlanMain from './components/Plans/Main.vue';
-import PlanList from './components/Plans/List.vue';
-import PlanNew from './components/Plans/New.vue';
-import Plan from './components/Plans/Show.vue';
-import PlanEdit from './components/Plans/Edit.vue';
+import PostMain from './components/Posts/Main.vue';
+import PostList from './components/Posts/List.vue';
+import PostNew from './components/Posts/New.vue';
+import Post from './components/Posts/Show.vue';
+import PostEdit from './components/Posts/Edit.vue';
 
 import CartItemMain from './components/CartItems/Main.vue';
 import CartItemList from './components/CartItems/List.vue';
@@ -79,24 +79,24 @@ export const routes = [
         ]
     },
     {
-        path: '/plan',
-        component: PlanMain,
+        path: '/post',
+        component: PostMain,
         children:[
             {
                 path:'/',
-                component:PlanList
+                component:PostList
             },
             {
                 path:'new',
-                component:PlanNew
+                component:PostNew
             },
             {
                 path:':id',
-                component:Plan
+                component:Post
             },
             {
                 path:':id/edit',
-                component:PlanEdit
+                component:PostEdit
             },
         ]
     },

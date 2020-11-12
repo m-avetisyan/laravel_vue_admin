@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             'App\Http\Contracts\PlanInterface',
-            'App\Http\Services\PlanService'
+            'App\Http\Services\PostService'
         );
         $this->app->bind(
             'App\Http\Contracts\CartItemInterface',
