@@ -23,6 +23,7 @@ class PostController extends Controller
     public function index(PostService $postService)
     {
         $posts = $postService->index();
+
         return new PostResource((object)['data' => $posts,'message' =>'Successfully fetched']);
     }
 //    /**

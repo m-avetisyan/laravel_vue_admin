@@ -18,28 +18,30 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Image</th>
+                    <th>Category</th>
                     <th colspan="3">Actions</th>
                 </tr>
                 </thead>
 
             <tbody>
-                    <tr v-for="(post,index) in posts" :key="index">
-                        <td>{{ post.id}}</td>
-                        <td>{{ post.name }}</td>
-                        <td>{{ post.description}}</td>
-                        <td>
-                            <img :src="`/uploads/posts/${post.image}`" style="width:100px"/>
-                        </td>
-                        <td>
-                            <router-link :to="`/post/${post.id}`">Show</router-link>
-                        </td>
-                        <td>
-                            <router-link :to="`/post/${post.id}/edit`">Edit</router-link>
-                        </td>
-                        <td>
-                             <input type="submit" value="Delete"  @click="deletePost(post.id,index)" class="btn btn-danger"/>
-                        </td>
-                    </tr>
+                <tr v-for="(post,index) in posts" :key="index">
+                    <td>{{ post.id}}</td>
+                    <td>{{ post.name }}</td>
+                    <td>{{ post.description}}</td>
+                    <td>
+                        <img :src="`/uploads/posts/${post.image}`" style="width:100px"/>
+                    </td>
+                    <td>{{ post.category.name}}</td>
+                    <td>
+                        <router-link :to="`/post/${post.id}`">Show</router-link>
+                    </td>
+                    <td>
+                        <router-link :to="`/post/${post.id}/edit`">Edit</router-link>
+                    </td>
+                    <td>
+                         <input type="submit" value="Delete"  @click="deletePost(post.id,index)" class="btn btn-danger"/>
+                    </td>
+                </tr>
             </tbody>
         </table>
         </template>

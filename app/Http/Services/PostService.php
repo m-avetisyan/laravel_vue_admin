@@ -14,7 +14,7 @@ class PostService implements PostInterface
     }
     public function index()
     {
-        return $this->post->all();
+        return $this->post->with('category')->get();
     }
     public function show($id)
     {

@@ -31,11 +31,11 @@
             axios.post(`/api/auth/confirmation/${token}`).then(res => {
                 console.log(res.data,'DATA')
 
-                if(res.data.data.code === 200){
-                  this.message  = res.data.data.message;
+                if(res.data.code === 200){
+                  this.message  = res.data.message;
                     this.status = true;
-                } else if(res.data.data.code === 400){
-                  this.message  = res.data.data.error;
+                } else if(res.data.code === 400){
+                  this.message  = res.data.error;
                   this.status = false
                 }
             }).catch(err => {});
